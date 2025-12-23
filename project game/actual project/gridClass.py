@@ -1,8 +1,12 @@
+import random
+import pygame
+
+
 class grid :
     def __init__ (self , width , height, dimension) :
         self.width = width
         self.height = height
-        self. D = dimension
+        self. dimension = dimension
         self.grid = [[[0 for i in range (dimension) ] for i in range (width)]for i in range (height)]
     def reset_grid (self) :
         self.grid = [[[0 for i in range (self.dimension) ] for i in range (self.width)]for i in range (self.height)]
@@ -47,21 +51,24 @@ class grid :
     def set_height (self , num) :
         self.height = num
         self.grid = [[[0 for i in range (self.dimension) ] for i in range (self.width)]for i in range (self.height)]
-    def change_sqr (row , coloum , dimension , value) :
-        ## used to change a specific co-ordinate
-        pass
-    def get_sqr () : ##### to do
-        ## get a specific coord if given the row and coloum
-        return ""
+    def change_sqr (self,height , length , dimension , value) : # can give list or singular value
+        if type(value) is list :
+            self.grid[height][length] = value
+        else :
+            self.grid[height][length][dimension] = value
+    def get_sqr (self , height , length) :
+        return self.grid[height][length]
     def orderedPrintGrid (self) :
         for i in range (self.height) :
             print(self.grid[i])
 
 
-exam = grid(width = 3 , height = 3 , dimension = 2)
-exam.set_height(4)
-print(exam.grid)
+class Minesweerper_grid (grid) :
+    def __init__ ():
+        grid.__init__(self , width , height, dimension)
+        
+        
 
-
-
+n = grid(3,3,2)
+n.orderedPrintGrid()
 
