@@ -3,9 +3,9 @@ import pygame
 #intialise the pygame
 pygame.init()
 
-screen = pygame.display.set_mode((800,600)) # length,width
+screen = pygame.display.set_mode((800,600)) # width,height 
 running = True
-
+key
 pygame.display.set_caption("Space Invaders")
 icon = pygame.image.load("testing stuff/Space invaders/ufo.png")
 pygame.display.set_icon(icon)
