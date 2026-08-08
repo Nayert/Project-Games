@@ -1,0 +1,28 @@
+import pygame 
+
+#intialise the pygame
+pygame.init()
+
+screen = pygame.display.set_mode((800,600)) # width,height 
+running = True
+
+
+
+pygame.display.set_caption("Space Invaders")
+icon = pygame.image.load("testing stuff/Space invaders/ufo.png")
+pygame.display.set_icon(icon)
+
+while running :
+    keys = pygame.key.get_pressed()
+    for event in pygame.event.get() :
+        if event.type == pygame.QUIT:
+            running = False
+    
+    if keys[pygame.K_LEFT] :
+        print("Left")
+    if keys[pygame.K_RIGHT]:
+        print("right")
+
+
+    screen.fill((123,234,255)) #RGB#
+    pygame.display.update()
